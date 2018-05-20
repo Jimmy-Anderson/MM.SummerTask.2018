@@ -9,11 +9,28 @@ var s=str.replace(" ",", ");
 document.getElementById("demo").innerHTML = s;
 
 //Main menu for small screens(<768px)
-function menuexpand(){
-	var x=document.getElementByClass("nav-link");
+function menuexpand(x){
+	 x.classList.toggle("change");
+	var x=document.getElementsByClassName("nav-item");
+	document.getElementsByClassName("navbar-nav")[0].style.flexDirection="column";
 	var i;
-		x[3].style.float="none";
-		x[3].style.display="block";
-		x[3].style.width= "100%";
-	
+	document.getElementsByClassName("navbar-nav")[0].classList.toggle("activebtn");
+	for(i=0;i<x.length;i++)
+	{	
+		x[i].classList.toggle("show");
+	}
+}
+window.onclick = function(event) {
+  if (!event.target.matches('.optionbtn')) {
+
+    var dropdowns = document.getElementsByClassName("nav-item");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+        document.getElementsByClassName("navbar-nav")[0].style.flexDirection="row";
+      }
+    }
+  }
 }

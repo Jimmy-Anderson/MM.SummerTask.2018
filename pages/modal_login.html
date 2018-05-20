@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>modal_login</title>
+	<link rel="stylesheet" type="text/css" href="../css/style_modal.css">
+</head>
+<body>
+	
+
+
+	<!-- Login form markup -->
+	<div class="panel modal_prop">
+    <ul class="panel__menu modal_prop" id="menu">
+      <hr>
+      <li id="signIn"> 
+          <a href="#">Login</a> 
+      </li>
+      <li id="signUp"> 
+          <a href="#">SignUp</a> 
+      </li> 
+    </ul> 
+  </div>
+  <div class="panel__wrap modal_prop">
+    <div class="panel__box active modal_prop" id="signInBox">  
+      <label>Email</label>
+      <input type="email"/>
+      <label>Password</label>
+      <input type="password"/>
+      <input type="submit"/>
+    </div>
+    <div class="panel__box " id="signUpBox">  
+      <label>Email</label>
+      <input type="email"/>
+      <label>Password</label>
+      <input type="password"/>
+      <label>Confirm Password</label>
+      <input type="password"/>
+      <input type="submit"/>
+    </div>
+  </div>
+  <button id="button">LOG IN</button>
+  <script src="../js/mylogin2.js">  </script>
+	
+
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+	  <span class="close">×</span>
+	  <div class="modal-content" id="img01">
+	  <div id="caption"></div>
+	</div>
+</body>
+</html>
