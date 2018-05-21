@@ -69,7 +69,7 @@
 }
 .dropdown:hover,#active:hover .nav-item{
 	background:#006D80;
-	opacity:0.7;
+	opacity:1;
 }
 #active{
 	background-color:#006D80;
@@ -92,8 +92,11 @@
 #navbar-drop,#active{
 	color:#fff;
 }
-.navbar>.navbar-nav{
-	position:sticky;
+#navbar-fixed{
+	position:fixed;
+	top:0;
+	width:100%;
+	margin:-8px;
 }
 .navbar-nav{
 	flex-direction:row;
@@ -158,18 +161,18 @@ button.search{
     margin: 6px 0;
     transition: 0.4s;
 }
-.activebtn .change .bar1 {
+.change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-8px, 7px);
 }
 
-.activebtn .change .bar2 {opacity: 0;}
+.change .bar2 {opacity: 0;}
 
-.activebtn .change .bar3 {
+.change .bar3 {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-4px, -6px);
 }
-.activebtn .bar3{
+.bar3{
 	margin-bottom: 0px;
 }
 .smenu{
@@ -209,7 +212,9 @@ button.search{
 	position:relative;
 	background:white;
 	} 
-
+	.navbar-nav{
+		flex-direction: column;
+	}	
 
 }
 
