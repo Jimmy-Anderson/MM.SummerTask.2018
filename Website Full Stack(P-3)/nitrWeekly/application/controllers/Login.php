@@ -20,7 +20,7 @@ class Login extends MY_Controller{
 		if($this->form_validation->run('login_rules'))
 		{
 			$username=$this->input->post('username');
-			$password=$this->input->post('password');
+			$password=md5($this->input->post('password'));
 			$this->load->model('loginmodel');
 			$user_details=$this->loginmodel->validate_login($username,$password);
 			$login_id=$user_details->id;
@@ -28,7 +28,7 @@ class Login extends MY_Controller{
 			$dname=$user_details->dname;
 			if($login_id)
 			{
-				$this->session->set_userdata(['user_id'=>$login_id,'dname'=>$dname]);
+				$this->session->set_userdata(['user_id'=>$login_id,'dname'=>$dname,'role'=>$role]);
 				return redirect('login/login_redirect');
 			}
 			else
@@ -48,7 +48,7 @@ class Login extends MY_Controller{
 				return redirect('user');
 	}
 	public function logout(){
-		$this->session->unset_userdata('user_id');
-		return redirect('login');
+		$this->session->unset_userdata(['user_id','dname','role']);
+		return redirect('user');
 	}
 }

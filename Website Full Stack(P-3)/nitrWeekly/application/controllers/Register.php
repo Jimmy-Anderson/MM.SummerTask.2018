@@ -10,7 +10,7 @@ class Register extends MY_Controller{
 			//Validation successful
 			$post=$this->input->post();
 			$post['uname']=$post['username'];
-			$post['pword']=$post['password'];
+			$post['pword']=md5($post['password']);
 			unset($post['submit']);
 			unset($post['confirmpassword']);
 			unset($post['username']);
