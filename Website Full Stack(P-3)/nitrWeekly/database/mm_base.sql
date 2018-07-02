@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 28, 2018 at 04:41 AM
+-- Generation Time: Jun 28, 2018 at 07:31 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -84,24 +84,26 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `reply_count` int(10) UNSIGNED DEFAULT NULL,
   `created_at` varchar(100) DEFAULT NULL,
   `author_name` varchar(100) DEFAULT NULL,
+  `status` int(10) UNSIGNED DEFAULT '0',
   PRIMARY KEY (`comment_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`post_id`, `comment_id`, `comment_body`, `author_id`, `reply_count`, `created_at`, `author_name`) VALUES
-(39, 6, 'hii this is my first comment', 5, NULL, '2018-06-15 08:59:09', 'johnny'),
-(39, 5, 'roshan', 5, NULL, '2018-06-15 08:58:55', 'johnny'),
-(39, 7, 'Hii this is the first comment', 5, NULL, '2018-06-15 09:07:06', 'johnny'),
-(39, 9, 'hii dude', 5, NULL, '2018-06-15 10:29:17', 'johnny'),
-(31, 10, 'hii ro', 5, NULL, '2018-06-15 10:30:53', 'johnny'),
-(39, 11, 'hello.', 4, NULL, '2018-06-15 10:36:22', 'roshan'),
-(43, 12, 'Nice pic!!', 6, NULL, '2018-06-16 07:03:39', 'JP'),
-(43, 13, 'thiod', 6, NULL, '2018-06-16 07:07:53', 'JP'),
-(41, 30, 'kdldewe', 4, NULL, '2018-06-16 13:12:49', 'roshan'),
-(44, 29, 'jdsjksd', 4, NULL, '2018-06-16 12:52:09', 'roshan');
+INSERT INTO `comments` (`post_id`, `comment_id`, `comment_body`, `author_id`, `reply_count`, `created_at`, `author_name`, `status`) VALUES
+(39, 6, 'hii this is my first comment', 5, NULL, '2018-06-15 08:59:09', 'johnny', 0),
+(39, 5, 'roshan', 5, NULL, '2018-06-15 08:58:55', 'johnny', 0),
+(39, 7, 'Hii this is the first comment', 5, NULL, '2018-06-15 09:07:06', 'johnny', 0),
+(39, 9, 'hii dude', 5, NULL, '2018-06-15 10:29:17', 'johnny', 0),
+(31, 10, 'hii ro', 5, NULL, '2018-06-15 10:30:53', 'johnny', 0),
+(39, 11, 'hello.', 4, NULL, '2018-06-15 10:36:22', 'roshan', 0),
+(43, 12, 'Nice pic!!', 6, NULL, '2018-06-16 07:03:39', 'JP', 0),
+(43, 13, 'thiod', 6, NULL, '2018-06-16 07:07:53', 'JP', 0),
+(41, 30, 'kdldewe', 4, NULL, '2018-06-16 13:12:49', 'roshan', 0),
+(44, 29, 'jdsjksd', 4, NULL, '2018-06-16 12:52:09', 'roshan', 0),
+(45, 31, 'roshan', 4, NULL, '2018-06-28 07:31:08', 'roshan', 0);
 
 -- --------------------------------------------------------
 
