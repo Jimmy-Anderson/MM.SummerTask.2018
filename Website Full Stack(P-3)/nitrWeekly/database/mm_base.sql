@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 28, 2018 at 07:31 AM
+-- Generation Time: Jul 03, 2018 at 05:22 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -34,13 +34,14 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `title` varchar(255) DEFAULT NULL,
   `content` text,
   `author_id` int(10) UNSIGNED DEFAULT NULL,
-  `view_count` int(10) UNSIGNED DEFAULT NULL,
+  `view_count` int(10) UNSIGNED DEFAULT '0',
   `created_at` varchar(255) DEFAULT NULL,
   `excerpts` text,
   `img_path` varchar(255) DEFAULT NULL,
   `status` varchar(100) DEFAULT 'Not Assigned',
   `category` varchar(255) DEFAULT 'Not Assigned',
   `sub_category` varchar(100) DEFAULT NULL,
+  `featured` int(10) UNSIGNED DEFAULT '0',
   PRIMARY KEY (`post_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
@@ -48,26 +49,26 @@ CREATE TABLE IF NOT EXISTS `articles` (
 -- Dumping data for table `articles`
 --
 
-INSERT INTO `articles` (`post_id`, `title`, `content`, `author_id`, `view_count`, `created_at`, `excerpts`, `img_path`, `status`, `category`, `sub_category`) VALUES
-(30, 'testd1', 'this is related to departments', 4, NULL, '2018-06-15 04:39:33', 'this is a dpartment test article', 'http://[::1]/nitrWeekly/uploads/img411.jpg', 'Not Assigned', 'dpt', 'bm'),
-(13, 'image test', 'ksflhfsll', 4, NULL, '2018-06-09 07:01:45', 'ldfsjllsf', 'http://[::1]/nitrWeekly/uploads/face-2.jpg', 'Not Assigned', 'Not Assigned', NULL),
-(31, 'testd1', 'this is related to departments', 4, NULL, '2018-06-15 04:40:40', 'this is a dpartment test article', 'http://[::1]/nitrWeekly/uploads/img412.jpg', 'Not Assigned', 'dpt', 'bm'),
-(32, 'testd1', 'this is related to departments', 4, NULL, '2018-06-15 04:40:54', 'this is a dpartment test article', 'http://[::1]/nitrWeekly/uploads/img413.jpg', 'Not Assigned', 'dpt', 'cs'),
-(29, 'test400', 'hejkj', 4, NULL, '2018-06-15 03:38:47', 'ijfelkjl', 'http://[::1]/nitrWeekly/uploads/img410.jpg', 'Not Assigned', 'dpt', 'ch'),
-(33, 'testd3', 'nknnnln', 4, NULL, '2018-06-15 04:41:10', 'kkmm.', 'http://[::1]/nitrWeekly/uploads/img19.jpg', 'Not Assigned', 'dpt', 'ch'),
-(34, 'testc1', 'hkhkhlhkhl', 4, NULL, '2018-06-15 04:41:48', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/img228.jpg', 'Not Assigned', 'cam', NULL),
-(35, 'testc1', 'hkhkhlhkhl', 4, NULL, '2018-06-15 04:42:31', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/img3.jpg', 'Not Assigned', 'cam', NULL),
-(36, 'testc1', 'hkhkhlhkhl', 4, NULL, '2018-06-15 04:43:51', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/backgroundDefault3.jpg', 'Not Assigned', 'cam', NULL),
-(37, 'testc1', 'hkhkhlhkhl', 4, NULL, '2018-06-15 04:44:57', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/img0.jpg', 'Not Assigned', 'cam', NULL),
-(28, 'Rohit boss', 'this is it', 6, NULL, '2018-06-11 09:15:02', 'this is it', 'http://[::1]/nitrWeekly/uploads/IMG_20170723_183812.jpg', 'Not Assigned', 'Not Assigned', NULL),
-(38, 'testc1', 'hkhkhlhkhl', 4, NULL, '2018-06-15 04:45:30', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/img01.jpg', 'Not Assigned', 'car', NULL),
-(39, 'testr1', 'hkhkhlhkhl', 4, NULL, '2018-06-15 04:46:11', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/img414.jpg', 'Not Assigned', 'car', NULL),
-(40, 'testr1', 'hkhkhlhkhl', 4, NULL, '2018-06-15 04:46:28', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/img31.jpg', 'Not Assigned', 'car', NULL),
-(41, 'testr1', 'hkhkhlhkhl', 4, NULL, '2018-06-15 04:46:41', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/img229.jpg', 'Not Assigned', 'car', NULL),
-(42, 'test v1', 'This is a test article', 4, NULL, '2018-06-15 04:48:39', 'views arrticles are here now', 'http://[::1]/nitrWeekly/uploads/img7.jpg', 'Not Assigned', 'vws', NULL),
-(43, 'test v1', 'This is a test article', 4, NULL, '2018-06-15 04:49:16', 'views arrticles are here now', 'http://[::1]/nitrWeekly/uploads/img32.jpg', 'Not Assigned', 'vws', NULL),
-(44, 'test v1', 'This is a test article', 4, NULL, '2018-06-15 04:49:41', 'views arrticles are here now', 'http://[::1]/nitrWeekly/uploads/img230.jpg', 'Not Assigned', 'vws', NULL),
-(45, 'test v1', 'This is a test article', 4, NULL, '2018-06-15 04:49:56', 'views arrticles are here now', 'http://[::1]/nitrWeekly/uploads/img110.jpg', 'Not Assigned', 'vws', NULL);
+INSERT INTO `articles` (`post_id`, `title`, `content`, `author_id`, `view_count`, `created_at`, `excerpts`, `img_path`, `status`, `category`, `sub_category`, `featured`) VALUES
+(30, 'testd1', 'this is related to departments', 4, 0, '2018-06-15 04:39:33', 'this is a dpartment test article', 'http://[::1]/nitrWeekly/uploads/img411.jpg', 'Not Assigned', 'dpt', 'bm', 1),
+(13, 'image test', 'ksflhfsll', 4, 0, '2018-06-09 07:01:45', 'ldfsjllsf', 'http://[::1]/nitrWeekly/uploads/face-2.jpg', 'Not Assigned', 'Not Assigned', NULL, 1),
+(31, 'testd1', 'this is related to departments', 4, 0, '2018-06-15 04:40:40', 'this is a dpartment test article', 'http://[::1]/nitrWeekly/uploads/img412.jpg', 'Not Assigned', 'dpt', 'bm', 1),
+(32, 'testd1', 'this is related to departments', 4, 0, '2018-06-15 04:40:54', 'this is a dpartment test article', 'http://[::1]/nitrWeekly/uploads/img413.jpg', 'Not Assigned', 'dpt', 'cs', 1),
+(29, 'test400', 'hejkj', 4, 0, '2018-06-15 03:38:47', 'ijfelkjl', 'http://[::1]/nitrWeekly/uploads/img410.jpg', 'Not Assigned', 'dpt', 'ch', 1),
+(33, 'testd3', 'nknnnln', 4, 0, '2018-06-15 04:41:10', 'kkmm.', 'http://[::1]/nitrWeekly/uploads/img19.jpg', 'Not Assigned', 'dpt', 'ch', 1),
+(34, 'testc1', 'hkhkhlhkhl', 4, 0, '2018-06-15 04:41:48', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/img228.jpg', 'Not Assigned', 'cam', NULL, 0),
+(35, 'testc1', 'hkhkhlhkhl', 4, 0, '2018-06-15 04:42:31', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/img3.jpg', 'Not Assigned', 'cam', NULL, 0),
+(36, 'testc1', 'hkhkhlhkhl', 4, 0, '2018-06-15 04:43:51', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/backgroundDefault3.jpg', 'Not Assigned', 'cam', NULL, 0),
+(37, 'testc1', 'hkhkhlhkhl', 4, 0, '2018-06-15 04:44:57', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/img0.jpg', 'Not Assigned', 'cam', NULL, 0),
+(28, 'Rohit boss', 'this is it', 6, 0, '2018-06-11 09:15:02', 'this is it', 'http://[::1]/nitrWeekly/uploads/IMG_20170723_183812.jpg', 'Not Assigned', 'Not Assigned', NULL, 0),
+(38, 'testc1', 'hkhkhlhkhl', 4, 0, '2018-06-15 04:45:30', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/img01.jpg', 'Not Assigned', 'car', NULL, 0),
+(39, 'testr1', 'hkhkhlhkhl', 4, 0, '2018-06-15 04:46:11', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/img414.jpg', 'Not Assigned', 'car', NULL, 0),
+(40, 'testr1', 'hkhkhlhkhl', 4, 1, '2018-06-15 04:46:28', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/img31.jpg', 'Not Assigned', 'car', NULL, 0),
+(41, 'testr1', 'hkhkhlhkhl', 4, 0, '2018-06-15 04:46:41', 'This is a test article', 'http://[::1]/nitrWeekly/uploads/img229.jpg', 'Not Assigned', 'car', NULL, 0),
+(42, 'test v1', 'This is a test article', 4, 0, '2018-06-15 04:48:39', 'views arrticles are here now', 'http://[::1]/nitrWeekly/uploads/img7.jpg', 'Not Assigned', 'vws', NULL, 0),
+(43, 'test v1', 'This is a test article', 4, 0, '2018-06-15 04:49:16', 'views arrticles are here now', 'http://[::1]/nitrWeekly/uploads/img32.jpg', 'Not Assigned', 'vws', NULL, 0),
+(44, 'test v1', 'This is a test article', 4, 1, '2018-06-15 04:49:41', 'views arrticles are here now', 'http://[::1]/nitrWeekly/uploads/img230.jpg', 'Not Assigned', 'vws', NULL, 0),
+(45, 'test v1', 'This is a test article', 4, 2, '2018-06-15 04:49:56', 'views arrticles are here now', 'http://[::1]/nitrWeekly/uploads/img110.jpg', 'Not Assigned', 'vws', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `reply_count` int(10) UNSIGNED DEFAULT NULL,
   `created_at` varchar(100) DEFAULT NULL,
   `author_name` varchar(100) DEFAULT NULL,
-  `status` int(10) UNSIGNED DEFAULT '0',
+  `Status` int(10) UNSIGNED DEFAULT '0',
   PRIMARY KEY (`comment_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
@@ -92,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`post_id`, `comment_id`, `comment_body`, `author_id`, `reply_count`, `created_at`, `author_name`, `status`) VALUES
+INSERT INTO `comments` (`post_id`, `comment_id`, `comment_body`, `author_id`, `reply_count`, `created_at`, `author_name`, `Status`) VALUES
 (39, 6, 'hii this is my first comment', 5, NULL, '2018-06-15 08:59:09', 'johnny', 0),
 (39, 5, 'roshan', 5, NULL, '2018-06-15 08:58:55', 'johnny', 0),
 (39, 7, 'Hii this is the first comment', 5, NULL, '2018-06-15 09:07:06', 'johnny', 0),
@@ -101,9 +102,7 @@ INSERT INTO `comments` (`post_id`, `comment_id`, `comment_body`, `author_id`, `r
 (39, 11, 'hello.', 4, NULL, '2018-06-15 10:36:22', 'roshan', 0),
 (43, 12, 'Nice pic!!', 6, NULL, '2018-06-16 07:03:39', 'JP', 0),
 (43, 13, 'thiod', 6, NULL, '2018-06-16 07:07:53', 'JP', 0),
-(41, 30, 'kdldewe', 4, NULL, '2018-06-16 13:12:49', 'roshan', 0),
-(44, 29, 'jdsjksd', 4, NULL, '2018-06-16 12:52:09', 'roshan', 0),
-(45, 31, 'roshan', 4, NULL, '2018-06-28 07:31:08', 'roshan', 0);
+(44, 29, 'jdsjksd', 4, NULL, '2018-06-16 12:52:09', 'roshan', 1);
 
 -- --------------------------------------------------------
 
